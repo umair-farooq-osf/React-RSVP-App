@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import GuestList from './GuestList';
-import Counter from './Counter';
 import Header from './Header';
-import ConfirmedFilter from './ConfirmedFilter';
+import MainContent from './MainContent';
 
 class App extends Component {
 
@@ -117,28 +115,19 @@ class App extends Component {
                     pendingGuest={ this.state.pendingGuest }
                 />
 
-                <div className="main">
-                    <ConfirmedFilter
-                        toggleFilter={ this.toggleFilter }
-                        isFiltered={ this.state.isFiltered }
-                    />
-
-                    <Counter
-                        numberAttending={ numberAttending }
-                        numberUnconfirmed={ numberUnconfirmed }
-                        totalInvited={ totalInvited }
-                    />
-
-                    <GuestList
-                        guests={ this.state.guests }
-                        toggleConfirmationAt={ this.toggleConfirmationAt }
-                        toggleEditingAt={ this.toggleEditingAt }
-                        removeGuestAt={ this.removeGuestAt }
-                        setNameAt={ this.setNameAt }
-                        isFiltered={ this.state.isFiltered }
-                        pendingGuest={ this.state.pendingGuest }
-                    />
-                </div>
+                <MainContent
+                    toggleFilter={ this.toggleFilter }
+                    isFiltered={ this.state.isFiltered }
+                    numberAttending={ numberAttending }
+                    numberUnconfirmed={ numberUnconfirmed }
+                    totalInvited={ totalInvited }
+                    guests={ this.state.guests }
+                    toggleConfirmationAt={ this.toggleConfirmationAt }
+                    toggleEditingAt={ this.toggleEditingAt }
+                    removeGuestAt={ this.removeGuestAt }
+                    setNameAt={ this.setNameAt }
+                    pendingGuest={ this.state.pendingGuest }
+                />
             </div>
         );
     }

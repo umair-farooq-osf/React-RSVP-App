@@ -18,7 +18,7 @@ Header.propTypes = {
     description: PropTypes.string,
     submitGuest: PropTypes.func.isRequired,
     nameInput: PropTypes.func.isRequired,
-    pendingGuest: PropTypes.func.isRequired
+    pendingGuest: PropTypes.string.isRequired
 };
 
 Header.defaultProps = {
